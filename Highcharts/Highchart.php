@@ -85,6 +85,9 @@ class Highchart extends AbstractChart implements ChartInterface
 
         // yAxis
         $chartJS .= $this->renderYAxis();
+        
+        // Lang
+        $chartJS .= $this->renderWithJavascriptCallback($this->lang, "lang");
 
         // trim last trailing comma and close parenthesis
         $chartJS = rtrim($chartJS, ",\n") . "\n    });\n";
